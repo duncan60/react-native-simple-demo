@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Button, SocialIcon } from 'react-native-elements';
-import { basic } from 'styles';
 
 let styles;
 
@@ -13,9 +12,9 @@ class ButtonDemo extends Component {
     console.log('button long press console');
   }
   render() {
+    console.log('ButtonDemo render');
     return (
-      <View>
-        <Text style={basic.pageTitle}> Button Demo</Text>
+      <View style={styles.container}>
         <Button
           raised
           buttonStyle={styles.mb}
@@ -45,6 +44,9 @@ class ButtonDemo extends Component {
 styles = StyleSheet.create({
   mb: {
     marginBottom: 10,
+  },
+  container: {
+    height: 500,
   },
 });
 
