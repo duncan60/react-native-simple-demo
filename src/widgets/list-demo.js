@@ -14,6 +14,9 @@ const listData = [
 ];
 
 class ListDemo extends Component {
+  onItemPressHandler = () => {
+    this.props.itemPress();
+  }
   render() {
     return (
       <View>
@@ -25,6 +28,7 @@ class ListDemo extends Component {
                 title={item.title}
                 leftIcon={{ name: item.icon }}
                 badge={{ value: 3, badgeTextStyle: { color: 'orange' } }}
+                onPress={this.onItemPressHandler}
               />
             ))
           }
@@ -32,6 +36,10 @@ class ListDemo extends Component {
       </View>
     );
   }
+}
+
+ListDemo.propTypes = {
+  itemPress: React.PropTypes.func.isRequired,
 }
 
 export default ListDemo;

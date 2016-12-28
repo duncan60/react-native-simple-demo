@@ -5,14 +5,23 @@ import { ListDemo } from 'widgets';
 import { basic } from 'styles';
 
 class SecondScreen extends Component {
+  onPushNavigator = () => {
+    this.props.navigator.push({
+      name: 'PushScreen',
+    });
+  }
   render() {
     return (
       <View>
         <Text style={basic.pageTitle}> Second Screen</Text>
-        <ListDemo />
+        <ListDemo itemPress={this.onPushNavigator} />
       </View>
     );
   }
 }
+
+SecondScreen.propTypes = {
+  navigator: React.PropTypes.object.isRequired,
+};
 
 export default SecondScreen;

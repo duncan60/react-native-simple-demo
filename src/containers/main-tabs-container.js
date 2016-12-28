@@ -42,8 +42,8 @@ class MainTabsContainer extends Component {
   }
 }
 
-// MainTabsContainer.propTypes = {
-//   navigator: React.PropTypes.object.isRequired,
-// };
+MainTabsContainer.propTypes = {
+  navigator: React.PropTypes.object.isRequired,
+};
 
 export default MainTabsContainer;
