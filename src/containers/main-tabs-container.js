@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { FirstScreen, SecondScreen } from 'screens';
 import { MainTabs } from 'widgets';
 
-let styles;
+import { basic } from 'styles';
 
 class MainTabsContainer extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class MainTabsContainer extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={basic.container}>
         <MainTabs
           {...this.state}
           {...this.props}
@@ -45,11 +45,5 @@ class MainTabsContainer extends Component {
 // MainTabsContainer.propTypes = {
 //   navigator: React.PropTypes.object.isRequired,
 // };
-
-styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default MainTabsContainer;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Navigator } from 'react-native';
+import { View, Navigator } from 'react-native';
 import MainTabsContainer from './main-tabs-container';
 
+import { basic } from 'styles';
+
 const ROUTES = { MainTabsContainer };
-let styles;
 
 class Root extends Component {
   configureScene = (route, routeStack) => {
@@ -21,7 +22,7 @@ class Root extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={basic.container}>
         <Navigator
           initialRoute={{ name: 'MainTabsContainer' }}
           renderScene={this.renderScene}
@@ -31,9 +32,5 @@ class Root extends Component {
     );
   }
 }
-styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+
 export default Root;

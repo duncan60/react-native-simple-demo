@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "material-design-icons": "^3.0.1",
@@ -29,6 +30,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.8.0",
     "jest": "18.0.0",
+    "react-native-debugger-open": "^0.3.2",
     "react-test-renderer": "15.4.1"
   },
   "jest": {

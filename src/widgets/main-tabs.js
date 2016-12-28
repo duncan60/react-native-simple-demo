@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
-
-import TabNavigator from 'react-native-tab-navigator';
-
-let { height } = Dimensions.get('window');
-let styles;
+import { Tabs, Tab, Icon } from 'react-native-elements';
 
 class MainTabs extends Component {
   handleSwitchTab = (idx) => {
@@ -16,24 +8,26 @@ class MainTabs extends Component {
   render() {
     const { renderTab, screen } = this.props;
     return (
-      <TabNavigator style={styles.container}>
-        <TabNavigator.Item
+      <Tabs>
+        <Tab
           selected={screen === 0}
-          title="First"
-          style={styles.item}
+          title={screen === 0 ? 'Button' : null}
+          renderIcon={() => <Icon name="whatshot" size={26} />}
+          renderSelectedIcon={() => <Icon name="whatshot" size={26} />}
           onPress={() => this.handleSwitchTab(0)}
         >
           {renderTab(0)}
-        </TabNavigator.Item>
-        <TabNavigator.Item
+        </Tab>
+        <Tab
           selected={screen === 1}
-          title="Second"
-          style={styles.item}
+          title={screen === 1 ? 'List' : null}
+          renderIcon={() => <Icon name="important-devices" size={26} />}
+          renderSelectedIcon={() => <Icon name="important-devices" size={26} />}
           onPress={() => this.handleSwitchTab(1)}
         >
           {renderTab(1)}
-        </TabNavigator.Item>
-      </TabNavigator>
+        </Tab>
+      </Tabs>
     );
   }
 }
@@ -44,12 +38,4 @@ MainTabs.propTypes = {
   renderTab: React.PropTypes.func.isRequired,
 };
 
-styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  item: {
-    height: height - 49,
-  },
-});
 export default MainTabs;

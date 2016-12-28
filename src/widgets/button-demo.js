@@ -12,7 +12,6 @@ class ButtonDemo extends Component {
     console.log('button long press console');
   }
   render() {
-    console.log('ButtonDemo render');
     return (
       <View style={styles.container}>
         <Button

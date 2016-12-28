@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { ButtonDemo } from 'widgets';
-import { basic } from 'styles';
 
-let styles;
+import { basic } from 'styles';
 
 class FirstScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={basic.container}>
         <Text style={basic.pageTitle}> First Screen</Text>
         <ButtonDemo />
       </View>
     );
   }
 }
-
-styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default FirstScreen;
