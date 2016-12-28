@@ -1,7 +1,7 @@
 import Root from './root';
-import ComponentDemo from './component-demo';
+import MainTabsContainer from './main-tabs-container';
 
 export {
   Root,
-  ComponentDemo,
+  MainTabsContainer,
 };

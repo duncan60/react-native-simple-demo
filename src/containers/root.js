@@ -1,16 +1,36 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { View, Text, Navigator } from 'react-native';
+import { basic } from 'styles';
+import { PushScreen } from 'screens';
+import MainTabsContainer from './main-tabs-container';
+
+const ROUTES = { MainTabsContainer, PushScreen };
 
 class Root extends Component {
+  configureScene = (route, routeStack) => {
+    return Navigator.SceneConfigs.FloatFromBottom;
+    // switch (route.name) {
+    //   // case 'SecondScreen':
+    //   //   return Navigator.SceneConfigs.FloatFromBottom;
+    //   default:
+    //     return Navigator.SceneConfigs.PushFromRight;
+    // }
+  }
+  renderScene = (route, navigator) => {
+    const Scene = ROUTES[route.name];
+    return <Scene {...route} navigator={navigator} />;
+  }
   render() {
     return (
-      <View>
-        <Text>
-          root view
-        </Text>
+      <View style={basic.container}>
+        <View style={basic.header}>
+          <Text style={basic.headerTitle}> Simple Demo </Text>
+        </View>
+        <Navigator
+          initialRoute={{ name: 'MainTabsContainer', index: 0 }}
+          renderScene={this.renderScene}
+          configureScene={this.configureScene}
+        />
       </View>
     );
   }
