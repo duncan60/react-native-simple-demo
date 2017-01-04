@@ -23,9 +23,6 @@ class Root extends Component {
   render() {
     return (
       <View style={basic.container}>
-        <View style={basic.header}>
-          <Text style={basic.headerTitle}> Simple Demo </Text>
-        </View>
         <Navigator
           initialRoute={{ name: 'MainTabsContainer', index: 0 }}
           renderScene={this.renderScene}

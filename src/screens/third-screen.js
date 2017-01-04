@@ -9,7 +9,9 @@ class ThirdScreen extends Component {
   render() {
     return (
       <View style={basic.container}>
-        <Text style={basic.pageTitle}> Third Screen</Text>
+        <View style={basic.header}>
+          <Text style={basic.headerTitle}> Third Screen </Text>
+        </View>
         <OtherDemo />
       </View>
     );

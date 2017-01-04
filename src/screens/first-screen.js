@@ -5,14 +5,27 @@ import { ButtonDemo } from 'widgets';
 import { basic } from 'styles';
 
 class FirstScreen extends Component {
+  onPushNavigator = () => {
+    this.props.navigator.push({
+      name: 'PushScreen',
+    });
+  }
   render() {
     return (
       <View style={basic.container}>
-        <Text style={basic.pageTitle}> First Screen</Text>
-        <ButtonDemo />
+        <View style={basic.header}>
+          <Text style={basic.headerTitle}> First Screen </Text>
+        </View>
+        <View style={basic.pageWarp}>
+          <ButtonDemo pressHandler={this.onPushNavigator} />
+        </View>
       </View>
     );
   }
 }
+
+FirstScreen.propTypes = {
+  navigator: React.PropTypes.object.isRequired,
+};
 
 export default FirstScreen;
