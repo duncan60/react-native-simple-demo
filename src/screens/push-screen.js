@@ -14,13 +14,12 @@ class PushScreen extends Component {
     return (
       <View style={basic.container}>
         <View style={basic.header}>
-          <View  style={styles.arrowLeft}>
+          <View style={styles.arrowLeft}>
             <Icon
               name="keyboard-arrow-left"
               onPress={this.onPopNavgator}
             />
           </View>
-
           <Text style={basic.headerTitle}>
             Push Screen
           </Text>
