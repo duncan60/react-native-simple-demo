@@ -50,7 +50,6 @@ styles = StyleSheet.create({
     top: 24,
     zIndex: 2,
   },
-
 });
 
 export default PushScreen;
