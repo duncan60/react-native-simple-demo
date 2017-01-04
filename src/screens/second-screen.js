@@ -12,8 +12,10 @@ class SecondScreen extends Component {
   }
   render() {
     return (
-      <View>
-        <Text style={basic.pageTitle}> Second Screen</Text>
+      <View style={basic.container}>
+        <View style={basic.header}>
+          <Text style={basic.headerTitle}> Second Screen </Text>
+        </View>
         <ListDemo itemPress={this.onPushNavigator} />
       </View>
     );

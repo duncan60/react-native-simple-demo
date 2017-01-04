@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { FirstScreen, SecondScreen } from 'screens';
+import { FirstScreen, SecondScreen, ThirdScreen } from 'screens';
 import { MainTabs } from 'widgets';
 
 import { basic } from 'styles';
@@ -24,6 +24,8 @@ class MainTabsContainer extends Component {
         return <FirstScreen navigator={navigator} />;
       case 1:
         return <SecondScreen navigator={navigator} />;
+      case 2:
+        return <ThirdScreen navigator={navigator} />;
       default:
         return null;
     }

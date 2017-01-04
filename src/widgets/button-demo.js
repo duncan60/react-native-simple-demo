@@ -6,7 +6,7 @@ let styles;
 
 class ButtonDemo extends Component {
   pressHandler = () => {
-    console.log('button press console');
+    this.props.pressHandler();
   }
   longPressHandler = () => {
     console.log('button long press console');
@@ -17,8 +17,7 @@ class ButtonDemo extends Component {
         <Button
           raised
           buttonStyle={styles.mb}
-          icon={{ name: 'cached' }}
-          title="RAISED WITH ICONxx"
+          title="Push Screen"
           onPress={this.pressHandler}
         />
 
@@ -28,7 +27,7 @@ class ButtonDemo extends Component {
           buttonStyle={styles.mb}
           backgroundColor="#397af8"
           icon={{ name: 'squirrel', type: 'octicon' }}
-          title="OCTICON"
+          title="long press"
           onLongPress={this.longPressHandler}
         />
         <SocialIcon
@@ -39,6 +38,10 @@ class ButtonDemo extends Component {
     );
   }
 }
+
+ButtonDemo.propTypes = {
+  pressHandler: React.PropTypes.func.isRequired,
+};
 
 styles = StyleSheet.create({
   mb: {

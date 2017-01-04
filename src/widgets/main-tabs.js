@@ -12,8 +12,8 @@ class MainTabs extends Component {
         <Tab
           selected={screen === 0}
           title={screen === 0 ? 'Button' : null}
-          renderIcon={() => <Icon name="whatshot" size={26} />}
-          renderSelectedIcon={() => <Icon name="whatshot" size={26} />}
+          renderIcon={() => <Icon name="home" size={26} />}
+          renderSelectedIcon={() => <Icon name="home" size={26} />}
           onPress={() => this.handleSwitchTab(0)}
         >
           {renderTab(0)}
@@ -21,11 +21,20 @@ class MainTabs extends Component {
         <Tab
           selected={screen === 1}
           title={screen === 1 ? 'List' : null}
-          renderIcon={() => <Icon name="important-devices" size={26} />}
-          renderSelectedIcon={() => <Icon name="important-devices" size={26} />}
+          renderIcon={() => <Icon name="list" size={26} />}
+          renderSelectedIcon={() => <Icon name="list" size={26} />}
           onPress={() => this.handleSwitchTab(1)}
         >
           {renderTab(1)}
+        </Tab>
+        <Tab
+          selected={screen === 2}
+          title={screen === 2 ? 'other' : null}
+          renderIcon={() => <Icon name="info" size={26} />}
+          renderSelectedIcon={() => <Icon name="info" size={26} />}
+          onPress={() => this.handleSwitchTab(2)}
+        >
+          {renderTab(2)}
         </Tab>
       </Tabs>
     );

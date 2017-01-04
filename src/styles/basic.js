@@ -19,12 +19,14 @@ const basic = StyleSheet.create({
   },
   app: {
     flex: 1,
-
   },
   pageTitle: {
     fontSize: 20,
     paddingTop: 6,
     paddingBottom: 6,
+  },
+  pageWarp: {
+    paddingTop: 10,
   },
 });
 

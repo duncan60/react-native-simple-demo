@@ -40,6 +40,6 @@ class ListDemo extends Component {
 
 ListDemo.propTypes = {
   itemPress: React.PropTypes.func.isRequired,
-}
+};
 
 export default ListDemo;
