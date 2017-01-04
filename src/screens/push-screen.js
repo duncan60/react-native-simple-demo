@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Icon, Card } from 'react-native-elements';
 
 import { basic } from 'styles';
 
@@ -24,9 +24,16 @@ class PushScreen extends Component {
             Push Screen
           </Text>
         </View>
-        <Text>
-          Push Screen
-        </Text>
+        <Card
+          title="Wonder Woman"
+          containerStyle={{ flex: 1 }}
+          wrapperStyle={{ flex: 1 }}
+          image={require('../assets/images/wonder_woman.png')}
+        >
+          <Text>
+            神力女超人是一位亞馬遜（基於希臘神話中的亞馬遜）的戰士公主，在她的家鄉被稱作新米西亞的黛安娜公主（英語：Princess Diana of Themyscira）
+          </Text>
+        </Card>
       </View>
     );
   }
@@ -42,7 +49,6 @@ styles = StyleSheet.create({
     left: 6,
     top: 24,
     zIndex: 2,
-    //marginBottoms: 10,
   },
 
 });
