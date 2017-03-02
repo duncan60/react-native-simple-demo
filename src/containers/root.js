@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Navigator } from 'react-native';
+import { View, Navigator } from 'react-native';
 import { basic } from 'styles';
 import { PushScreen } from 'screens';
 import MainTabsContainer from './main-tabs-container';
