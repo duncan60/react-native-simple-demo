@@ -32,6 +32,7 @@ class SwiperDemo extends PureComponent {
   render() {
     return (
       <Swiper
+        showsButtons
         style={styles.wrapper}
         onMomentumScrollEnd={(e, state) => {
           console.log('index:', state.index);

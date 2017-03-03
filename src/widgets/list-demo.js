@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
 const listData = [
@@ -11,6 +11,50 @@ const listData = [
     title: 'Trips',
     icon: 'flight-takeoff',
   },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+  },
 ];
 
 class ListDemo extends PureComponent {
@@ -19,7 +63,7 @@ class ListDemo extends PureComponent {
   }
   render() {
     return (
-      <View>
+      <ScrollView>
         <List>
           {
             listData.map((item, i) => (
@@ -33,7 +77,7 @@ class ListDemo extends PureComponent {
             ))
           }
         </List>
-      </View>
+      </ScrollView>
     );
   }
 }
