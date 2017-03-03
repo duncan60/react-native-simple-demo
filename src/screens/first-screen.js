@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
-import { ButtonDemo } from 'widgets';
+import { ButtonDemo, OtherDemo } from 'widgets';
 
 import { basic } from 'styles';
 
@@ -17,6 +17,7 @@ class FirstScreen extends PureComponent {
           <Text style={basic.headerTitle}> First Screen </Text>
         </View>
         <View style={basic.pageWarp}>
+          <OtherDemo />
           <ButtonDemo pressHandler={this.onPushNavigator} />
         </View>
       </View>

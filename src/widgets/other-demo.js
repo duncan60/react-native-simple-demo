@@ -41,11 +41,6 @@ class OtherDemo extends PureComponent {
         />
         <FormLabel>Name</FormLabel>
         <FormInput keyboardType="email-address" onChangeText={(text) => { console.log(text); }} />
-        <ButtonGroup
-          onPress={this.updateIndex}
-          selectedIndex={selectedIndex}
-          buttons={buttons}
-        />
       </View>
     );
   }
