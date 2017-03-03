@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
@@ -13,7 +13,7 @@ const listData = [
   },
 ];
 
-class ListDemo extends Component {
+class ListDemo extends PureComponent {
   onItemPressHandler = () => {
     this.props.itemPress();
   }

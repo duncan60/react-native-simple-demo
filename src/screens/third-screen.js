@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import { OtherDemo } from 'widgets';
 
 import { basic } from 'styles';
 
-class ThirdScreen extends Component {
+class ThirdScreen extends PureComponent {
 
   render() {
     return (
