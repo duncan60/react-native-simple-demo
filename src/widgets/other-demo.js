@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import { ButtonGroup, CheckBox, FormLabel, FormInput } from 'react-native-elements';
 
-class OtherDemo extends Component {
+class OtherDemo extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -41,11 +41,6 @@ class OtherDemo extends Component {
         />
         <FormLabel>Name</FormLabel>
         <FormInput keyboardType="email-address" onChangeText={(text) => { console.log(text); }} />
-        <ButtonGroup
-          onPress={this.updateIndex}
-          selectedIndex={selectedIndex}
-          buttons={buttons}
-        />
       </View>
     );
   }

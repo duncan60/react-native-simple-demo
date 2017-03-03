@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Tabs, Tab, Icon } from 'react-native-elements';
 
-class MainTabs extends Component {
+class MainTabs extends PureComponent {
   handleSwitchTab = (idx) => {
     this.props.onSwitchTab(idx);
   }

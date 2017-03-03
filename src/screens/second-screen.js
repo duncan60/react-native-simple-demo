@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import { ListDemo } from 'widgets';
 
 import { basic } from 'styles';
 
-class SecondScreen extends Component {
+class SecondScreen extends PureComponent {
   onPushNavigator = () => {
     this.props.navigator.push({
       name: 'PushScreen',

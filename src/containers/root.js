@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { View, Text, Navigator } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, Navigator } from 'react-native';
 import { basic } from 'styles';
 import { PushScreen } from 'screens';
 import MainTabsContainer from './main-tabs-container';
 
 const ROUTES = { MainTabsContainer, PushScreen };
 
-class Root extends Component {
+class Root extends PureComponent {
   configureScene = (route, routeStack) => {
+    console.log('routeStack configureScene');
     return Navigator.SceneConfigs.FloatFromBottom;
     // switch (route.name) {
     //   // case 'SecondScreen':
@@ -17,6 +18,7 @@ class Root extends Component {
     // }
   }
   renderScene = (route, navigator) => {
+    console.log('navigator renderScene');
     const Scene = ROUTES[route.name];
     return <Scene {...route} navigator={navigator} />;
   }

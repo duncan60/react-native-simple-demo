@@ -3,7 +3,8 @@
   "extends": "airbnb",
   "plugins": [
     "react",
-    "import"
+    "import",
+    "jest"
   ],
   "rules": {
     "max-len": ["error", 200, 4],
@@ -16,6 +17,15 @@
     "react/prefer-stateless-function": 0,
     "import/no-extraneous-dependencies":0,
     "import/no-unresolved": 0,
-    "import/extensions":0
+    "import/extensions":0,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+  },
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "__DEV__": true
   }
 }

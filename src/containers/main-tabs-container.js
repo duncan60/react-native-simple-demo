@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View } from 'react-native';
 import { FirstScreen, SecondScreen, ThirdScreen } from 'screens';
 import { MainTabs } from 'widgets';
 
 import { basic } from 'styles';
 
-class MainTabsContainer extends Component {
+class MainTabsContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
-import { ButtonDemo } from 'widgets';
+import { ButtonDemo, OtherDemo } from 'widgets';
 
 import { basic } from 'styles';
 
-class FirstScreen extends Component {
+class FirstScreen extends PureComponent {
   onPushNavigator = () => {
     this.props.navigator.push({
       name: 'PushScreen',
@@ -17,6 +17,7 @@ class FirstScreen extends Component {
           <Text style={basic.headerTitle}> First Screen </Text>
         </View>
         <View style={basic.pageWarp}>
+          <OtherDemo />
           <ButtonDemo pressHandler={this.onPushNavigator} />
         </View>
       </View>

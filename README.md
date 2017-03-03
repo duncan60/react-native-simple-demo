@@ -1,2 +1,2 @@
 # react-native-simple-demo
-react-native-simple-demo
+practice react-native development

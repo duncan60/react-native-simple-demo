@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Icon, Card } from 'react-native-elements';
 
@@ -6,7 +6,10 @@ import { basic } from 'styles';
 
 let styles;
 
-class PushScreen extends Component {
+class PushScreen extends PureComponent {
+  componentDidMount() {
+    console.log('PushScreen componentDidMount');
+  }
   onPopNavgator = () => {
     this.props.navigator.pop();
   }
@@ -50,7 +53,6 @@ styles = StyleSheet.create({
     top: 24,
     zIndex: 2,
   },
-
 });
 
 export default PushScreen;

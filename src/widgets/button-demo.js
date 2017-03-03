@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Button, SocialIcon } from 'react-native-elements';
 
 let styles;
 
-class ButtonDemo extends Component {
+class ButtonDemo extends PureComponent {
   pressHandler = () => {
     this.props.pressHandler();
   }
