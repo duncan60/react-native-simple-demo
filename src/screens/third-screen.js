@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { SwiperDemo } from 'widgets';
 
 import { basic } from 'styles';
@@ -11,7 +11,9 @@ class ThirdScreen extends PureComponent {
         <View style={basic.header}>
           <Text style={basic.headerTitle}> Third Screen </Text>
         </View>
-        <SwiperDemo />
+        <ScrollView>
+          <SwiperDemo />
+        </ScrollView>
       </View>
     );
   }

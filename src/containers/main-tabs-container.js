@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
-import { FirstScreen, SecondScreen, ThirdScreen } from 'screens';
+import { FirstScreen, SecondScreen, ThirdScreen, FourthScreen } from 'screens';
 import { MainTabs } from 'widgets';
 
 import { basic } from 'styles';
@@ -34,6 +34,11 @@ class MainTabsContainer extends PureComponent {
         title: 'Swiper',
         icon: 'pageview',
         screen: <ThirdScreen navigator={navigator} />,
+      },
+      {
+        title: 'Charts',
+        icon: 'assessment',
+        screen: <FourthScreen navigator={navigator} />,
       },
     ];
     return (

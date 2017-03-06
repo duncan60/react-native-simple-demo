@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
+  wrapper: {
+    flex: 1,
+  }
 });
 
 class SwiperDemo extends PureComponent {
