@@ -17,27 +17,32 @@ class MainTabsContainer extends PureComponent {
       screen: idx,
     });
   }
-  renderTab = (idx) => {
-    const { navigator } = this.props;
-    switch (idx) {
-      case 0:
-        return <FirstScreen navigator={navigator} />;
-      case 1:
-        return <SecondScreen navigator={navigator} />;
-      case 2:
-        return <ThirdScreen navigator={navigator} />;
-      default:
-        return null;
-    }
-  }
   render() {
+    const { navigator } = this.props;
+    const screens = [
+      {
+        title: 'home',
+        icon: 'home',
+        screen: <FirstScreen navigator={navigator} />,
+      },
+      {
+        title: 'List',
+        icon: 'list',
+        screen: <SecondScreen navigator={navigator} />,
+      },
+      {
+        title: 'Swiper',
+        icon: 'pageview',
+        screen: <ThirdScreen navigator={navigator} />,
+      },
+    ];
     return (
       <View style={basic.container}>
         <MainTabs
           {...this.state}
           {...this.props}
+          screens={screens}
           onSwitchTab={this.switchTabHandler}
-          renderTab={this.renderTab}
         />
       </View>
     );

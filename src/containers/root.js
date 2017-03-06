@@ -8,7 +8,6 @@ const ROUTES = { MainTabsContainer, PushScreen };
 
 class Root extends PureComponent {
   configureScene = (route, routeStack) => {
-    console.log('routeStack configureScene');
     return Navigator.SceneConfigs.FloatFromBottom;
     // switch (route.name) {
     //   // case 'SecondScreen':
@@ -18,7 +17,6 @@ class Root extends PureComponent {
     // }
   }
   renderScene = (route, navigator) => {
-    console.log('navigator renderScene');
     const Scene = ROUTES[route.name];
     return <Scene {...route} navigator={navigator} />;
   }

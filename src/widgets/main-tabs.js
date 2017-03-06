@@ -5,37 +5,25 @@ class MainTabs extends PureComponent {
   handleSwitchTab = (idx) => {
     this.props.onSwitchTab(idx);
   }
+  renderTabs = () => {
+    const { screen, screens } = this.props;
+    return screens.map((sc, idx) =>
+      <Tab
+        key={idx}
+        selected={screen === idx}
+        title={sc.title}
+        renderIcon={() => <Icon name={sc.icon} size={26} />}
+        renderSelectedIcon={() => <Icon name={sc.icon} size={26} />}
+        onPress={() => this.handleSwitchTab(idx)}
+      >
+        {sc.screen}
+      </Tab>,
+    );
+  }
   render() {
-    const { renderTab, screen } = this.props;
     return (
       <Tabs>
-        <Tab
-          selected={screen === 0}
-          title={screen === 0 ? 'Button' : null}
-          renderIcon={() => <Icon name="home" size={26} />}
-          renderSelectedIcon={() => <Icon name="home" size={26} />}
-          onPress={() => this.handleSwitchTab(0)}
-        >
-          {renderTab(0)}
-        </Tab>
-        <Tab
-          selected={screen === 1}
-          title={screen === 1 ? 'List' : null}
-          renderIcon={() => <Icon name="list" size={26} />}
-          renderSelectedIcon={() => <Icon name="list" size={26} />}
-          onPress={() => this.handleSwitchTab(1)}
-        >
-          {renderTab(1)}
-        </Tab>
-        <Tab
-          selected={screen === 2}
-          title={screen === 2 ? 'other' : null}
-          renderIcon={() => <Icon name="info" size={26} />}
-          renderSelectedIcon={() => <Icon name="info" size={26} />}
-          onPress={() => this.handleSwitchTab(2)}
-        >
-          {renderTab(2)}
-        </Tab>
+        {this.renderTabs()}
       </Tabs>
     );
   }
@@ -44,7 +32,7 @@ class MainTabs extends PureComponent {
 MainTabs.propTypes = {
   screen: React.PropTypes.number.isRequired,
   onSwitchTab: React.PropTypes.func.isRequired,
-  renderTab: React.PropTypes.func.isRequired,
+  screens: React.PropTypes.array.isRequired,
 };
 
 export default MainTabs;

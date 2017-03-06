@@ -5,7 +5,6 @@ import { SwiperDemo } from 'widgets';
 import { basic } from 'styles';
 
 class ThirdScreen extends PureComponent {
-
   render() {
     return (
       <View style={basic.container}>
