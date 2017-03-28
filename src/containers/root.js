@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Navigator } from 'react-native';
+import { View, Navigator, AppState } from 'react-native';
 import { basic } from 'styles';
 import { PushScreen } from 'screens';
 import MainTabsContainer from './main-tabs-container';
@@ -7,6 +7,15 @@ import MainTabsContainer from './main-tabs-container';
 const ROUTES = { MainTabsContainer, PushScreen };
 
 class Root extends PureComponent {
+  componentDidMount() {
+    AppState.addEventListener('change', this.handleAppStateChange);
+  }
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+  handleAppStateChange = (nextAppState) => {
+    console.log('handleAppStateChange:', nextAppState);
+  }
   configureScene = (route, routeStack) => {
     return Navigator.SceneConfigs.FloatFromBottom;
     // switch (route.name) {

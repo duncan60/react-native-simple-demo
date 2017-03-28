@@ -1,5 +1,5 @@
 # react-native-simple-demo
-practice react-native development
+practice react-native development and usage libraries
 
 ## Install
 ``` text
@@ -14,3 +14,5 @@ $ yarn install
 - react-native-pathjs-charts
 - react-native-swiper
 - react-native-vector-icons
+
+## Resources

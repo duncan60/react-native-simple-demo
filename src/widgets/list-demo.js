@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, RefreshControl } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
 const listData = [
@@ -58,12 +58,39 @@ const listData = [
 ];
 
 class ListDemo extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      refreshing: false,
+    };
+  }
+  componentWillUnmount() {
+    this.timer && clearTimeout(this.timer);
+  }
   onItemPressHandler = () => {
     this.props.itemPress();
   }
+  onRefresh = () => {
+    console.log('RefreshControl onRefresh');
+    this.setState({ refreshing: true });
+    this.timer = setTimeout(
+      () => {
+        this.setState({ refreshing: false });
+      },
+      500,
+    );
+  }
   render() {
     return (
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            title="Loading..."
+            refreshing={this.state.refreshing}
+            onRefresh={this.onRefresh}
+          />
+        }
+      >
         <List>
           {
             listData.map((item, i) => (
