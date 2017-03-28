@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Navigator } from 'react-native';
+import { View, Navigator, AppState } from 'react-native';
 import { basic } from 'styles';
 import { PushScreen } from 'screens';
 import MainTabsContainer from './main-tabs-container';
@@ -7,8 +7,16 @@ import MainTabsContainer from './main-tabs-container';
 const ROUTES = { MainTabsContainer, PushScreen };
 
 class Root extends PureComponent {
+  componentDidMount() {
+    AppState.addEventListener('change', this.handleAppStateChange);
+  }
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
+  }
+  handleAppStateChange = (nextAppState) => {
+    console.log('handleAppStateChange:', nextAppState);
+  }
   configureScene = (route, routeStack) => {
-    console.log('routeStack configureScene');
     return Navigator.SceneConfigs.FloatFromBottom;
     // switch (route.name) {
     //   // case 'SecondScreen':
@@ -18,7 +26,6 @@ class Root extends PureComponent {
     // }
   }
   renderScene = (route, navigator) => {
-    console.log('navigator renderScene');
     const Scene = ROUTES[route.name];
     return <Scene {...route} navigator={navigator} />;
   }

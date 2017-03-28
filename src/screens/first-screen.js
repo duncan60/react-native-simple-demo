@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { ButtonDemo, OtherDemo } from 'widgets';
 
 import { basic } from 'styles';
@@ -16,10 +16,10 @@ class FirstScreen extends PureComponent {
         <View style={basic.header}>
           <Text style={basic.headerTitle}> First Screen </Text>
         </View>
-        <View style={basic.pageWarp}>
+        <ScrollView style={basic.pageWarp}>
           <OtherDemo />
           <ButtonDemo pressHandler={this.onPushNavigator} />
-        </View>
+        </ScrollView>
       </View>
     );
   }

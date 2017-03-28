@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
-import { FirstScreen, SecondScreen, ThirdScreen } from 'screens';
+import { FirstScreen, SecondScreen, ThirdScreen, FourthScreen } from 'screens';
 import { MainTabs } from 'widgets';
 
 import { basic } from 'styles';
@@ -17,27 +17,37 @@ class MainTabsContainer extends PureComponent {
       screen: idx,
     });
   }
-  renderTab = (idx) => {
-    const { navigator } = this.props;
-    switch (idx) {
-      case 0:
-        return <FirstScreen navigator={navigator} />;
-      case 1:
-        return <SecondScreen navigator={navigator} />;
-      case 2:
-        return <ThirdScreen navigator={navigator} />;
-      default:
-        return null;
-    }
-  }
   render() {
+    const { navigator } = this.props;
+    const screens = [
+      {
+        title: 'home',
+        icon: 'home',
+        screen: <FirstScreen navigator={navigator} />,
+      },
+      {
+        title: 'List',
+        icon: 'list',
+        screen: <SecondScreen navigator={navigator} />,
+      },
+      {
+        title: 'Swiper',
+        icon: 'pageview',
+        screen: <ThirdScreen navigator={navigator} />,
+      },
+      {
+        title: 'Charts',
+        icon: 'assessment',
+        screen: <FourthScreen navigator={navigator} />,
+      },
+    ];
     return (
       <View style={basic.container}>
         <MainTabs
           {...this.state}
           {...this.props}
+          screens={screens}
           onSwitchTab={this.switchTabHandler}
-          renderTab={this.renderTab}
         />
       </View>
     );
