@@ -1,43 +1,69 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
-import { ButtonGroup, CheckBox, FormLabel, FormInput } from 'react-native-elements';
+import { View, Switch } from 'react-native';
+import { CheckBox, FormLabel, FormInput } from 'react-native-elements';
+
+let storageCache;
+const saveStorage = (obj) => {
+  storageCache = {
+    ...storageCache,
+    ...obj,
+  };
+  storage.save({
+    key: 'storageTest',
+    rawData: {
+      ...storageCache,
+    },
+  });
+};
 
 class OtherDemo extends PureComponent {
   constructor() {
     super();
     this.state = {
-      selectedIndex: 0,
+      isSwitch: false,
+      isChecked: false,
     };
   }
-  updateIndex = (selectedIndex) => {
-    this.setState({ selectedIndex });
+  componentDidMount() {
+    storage.load({
+      key: 'storageTest',
+    }).then((ret) => {
+      this.setState({
+        isSwitch: ret.isSwitch,
+        isChecked: ret.isChecked,
+      });
+      storageCache = ret;
+    });
+  }
+  onSwitchValueChange = (value) => {
+    this.setState({ isSwitch: value });
+    saveStorage({ isSwitch: value });
+  }
+  onCheckBoxPress = () => {
+    const bol = this.state.isChecked;
+    this.setState({ isChecked: !bol });
+    saveStorage({ isChecked: !bol });
   }
   render() {
-    const buttons = ['Hello', 'World', 'Buttons'];
-    const { selectedIndex } = this.state;
+    const {
+      isSwitch,
+      isChecked,
+    } = this.state;
 
     return (
       <View>
         <CheckBox
-          title="Click Here"
-          checked={true}
-        />
-        <CheckBox
+          name="check-box"
           title="Click Here"
           center
           checkedIcon="dot-circle-o"
           uncheckedIcon="circle-o"
-          checked={true}
+          checked={isChecked}
+          onPress={this.onCheckBoxPress}
         />
-        <CheckBox
-          center
-          title="Click Here to Remove This Item"
-          iconRight
-          iconType="material"
-          checkedIcon="clear"
-          uncheckedIcon="add"
-          checkedColor="red"
-          checked={this.state.checked}
+        <Switch
+          onValueChange={this.onSwitchValueChange}
+          value={isSwitch}
         />
         <FormLabel>Name</FormLabel>
         <FormInput keyboardType="email-address" onChangeText={(text) => { console.log(text); }} />

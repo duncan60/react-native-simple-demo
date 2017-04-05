@@ -1,7 +1,14 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { View, AsyncStorage } from 'react-native';
 import { basic } from 'styles';
 import { Root } from 'containers';
+import Storage from 'react-native-storage';
+
+const storage = new Storage({
+  storageBackend: AsyncStorage,
+  defaultExpires: null,
+});
+global.storage = storage;
 
 if (!__DEV__) {
   global.console = {
