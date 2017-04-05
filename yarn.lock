@@ -3542,7 +3542,7 @@ react-addons-shallow-compare@15.5.0-alpha.0:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-addons-shallow-compare@^16.0.0-alpha.6:
+react-addons-shallow-compare@^16.0.0-alpha.3:
   version "16.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-16.0.0-alpha.3.tgz#487e23fecf57c84dd79210162b509a940cccdcc4"
   dependencies:
@@ -3591,6 +3591,10 @@ react-native-pathjs-charts@^0.0.26:
 react-native-side-menu@^0.20.1:
   version "0.20.1"
   resolved "https://registry.yarnpkg.com/react-native-side-menu/-/react-native-side-menu-0.20.1.tgz#df21b4bb9d8a1aa3bae53d74ddf8a739eb59bfc5"
+
+react-native-storage@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-storage/-/react-native-storage-0.1.5.tgz#91d77560e41cc9e62d587b55a21b3d6ebaba5599"
 
 react-native-svg@~4.5.0:
   version "4.5.0"
