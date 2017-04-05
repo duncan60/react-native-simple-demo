@@ -14,5 +14,5 @@ $ yarn install
 - react-native-pathjs-charts
 - react-native-swiper
 - react-native-vector-icons
-
+- react-native-storage
 ## Resources
