@@ -51,7 +51,7 @@ class OtherDemo extends PureComponent {
     } = this.state;
 
     return (
-      <View>
+      <View style={{ marginBottom: 20 }}>
         <CheckBox
           name="check-box"
           title="Click Here"
@@ -65,8 +65,12 @@ class OtherDemo extends PureComponent {
           onValueChange={this.onSwitchValueChange}
           value={isSwitch}
         />
-        <FormLabel>Name</FormLabel>
-        <FormInput keyboardType="email-address" onChangeText={(text) => { console.log(text); }} />
+        <FormLabel>Form Label</FormLabel>
+        <FormInput
+          keyboardType="email-address"
+          placeholder="input text"
+          onChangeText={(text) => { console.log(text); }}
+        />
       </View>
     );
   }

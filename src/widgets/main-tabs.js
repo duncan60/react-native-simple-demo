@@ -13,7 +13,7 @@ class MainTabs extends PureComponent {
         selected={screen === idx}
         title={sc.title}
         renderIcon={() => <Icon name={sc.icon} size={26} />}
-        renderSelectedIcon={() => <Icon name={sc.icon} size={26} />}
+        renderSelectedIcon={() => <Icon color={'#6296f9'} name={sc.icon} size={26} />}
         onPress={() => this.handleSwitchTab(idx)}
       >
         {sc.screen}
